@@ -3,7 +3,9 @@ import ProtectedRoute from './components/ProtectedRoute'
 import { AuthProvider } from './contexts/AuthContexts'
 import AllPosts from './pages/AllPosts'
 import ArticleDetail from './pages/ArticleDetail'
+import CreateArticle from './pages/CreateArticle'
 import CreatePost from './pages/CreatePost'
+import EditArticle from './pages/EditArticle'
 import EditPost from './pages/EditPost'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -30,6 +32,9 @@ function App() {
 							</ProtectedRoute>
 						}
 					/>
+
+					<Route path='/create' element={<CreateArticle />} />
+					<Route path='/edit/:slug' element={<EditArticle />} />
 
 					<Route path='/' element={<AllPosts />} />
 					<Route path='/posts/:id' element={<PostDetail />} />
